@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trading_pages",
+  "info": {
+    "singularName": "trading-page",
+    "pluralName": "trading-pages",
+    "displayName": "Trading Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    }
+  }
+}
