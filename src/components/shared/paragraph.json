@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_paragraphs",
+  "info": {
+    "displayName": "paragraph",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "paragraph": {
+      "type": "text"
+    }
+  }
+}

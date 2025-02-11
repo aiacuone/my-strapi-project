@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "trading_pages",
+  "collectionName": "page_groups",
   "info": {
-    "singularName": "trading-page",
-    "pluralName": "trading-pages",
-    "displayName": "Trading Page",
+    "singularName": "page-group",
+    "pluralName": "page-groups",
+    "displayName": "Page Group",
     "description": ""
   },
   "options": {
@@ -19,9 +19,10 @@
       "type": "string"
     },
     "pages": {
+      "displayName": "Pages",
       "type": "component",
-      "repeatable": true,
-      "component": "shared.link"
+      "repeatable": false,
+      "component": "shared.pages"
     }
   }
 }

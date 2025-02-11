@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_page_templates",
+  "info": {
+    "displayName": "Page Template"
+  },
+  "options": {},
+  "attributes": {
+    "Template": {
+      "type": "enumeration",
+      "enum": [
+        "trading"
+      ],
+      "required": true,
+      "default": "trading"
+    }
+  }
+}

@@ -1,22 +1,39 @@
 {
   "collectionName": "components_shared_links",
   "info": {
-    "displayName": "Link",
+    "displayName": "Trading Page",
     "icon": "link",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "Label": {
+    "label": {
       "type": "string",
       "required": true
     },
     "href": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false
     },
     "bannerUrl": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.paragraph",
+      "required": true
+    },
+    "imageUrl": {
+      "type": "string",
+      "required": true
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.trade-partner"
     }
   }
 }

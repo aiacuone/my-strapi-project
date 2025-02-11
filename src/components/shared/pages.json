@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_pages",
+  "info": {
+    "displayName": "Pages",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "trading": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    }
+  }
+}
