@@ -15,6 +15,11 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.home-page"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pages.about"
     }
   }
 }

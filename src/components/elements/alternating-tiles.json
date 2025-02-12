@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_elements_alternating_tiles",
+  "info": {
+    "displayName": "Alternating Tiles",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "linkButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link-button"
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.paragraph"
+    }
+  }
+}

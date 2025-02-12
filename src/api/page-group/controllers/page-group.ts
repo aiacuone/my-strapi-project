@@ -23,7 +23,12 @@ export default factories.createCoreController(
         ({ pages, href, ...rest }) => {
           const { id, ..._pages } = pages
 
-          const modifiedPages = getModifiedPages(_pages)
+          const modifiedPages = getModifiedPages(
+            _pages as Record<
+              PageTemplate_enum,
+              TradingPage_int[] | HomePage_int[]
+            >
+          )
 
           return {
             href: checkIfHrefHasSlash(href),
