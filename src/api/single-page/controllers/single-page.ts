@@ -7,8 +7,11 @@ import {
   PageGroup_int,
   TradingPage_int,
   PageTemplate_enum,
+  Page_int,
+  HomePage_int,
 } from '../../../../types'
 import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
+import { getModifiedPages } from '../../../utils/general'
 
 export default factories.createCoreController(
   'api::single-page.single-page',
@@ -16,24 +19,9 @@ export default factories.createCoreController(
     async find(ctx) {
       const { data, meta } = await super.find(ctx)
       const { pages } = data
-      const { trading, home } = pages
+      const { id, ..._pages } = pages
 
-      const modifiedTradingPages = (
-        mappedPageGroup(trading) as TradingPage_int[]
-      ).map(({ partners, href, ...rest }) => ({
-        href: checkIfHrefHasSlash(href),
-        template: PageTemplate_enum.trading,
-        ...rest,
-      }))
-
-      const modifiedHomePages = home.map(({ paragraphs, href, ...rest }) => ({
-        href: checkIfHrefHasSlash(href),
-        paragraphs: paragraphs.map(({ paragraph }) => paragraph),
-        template: PageTemplate_enum.home,
-        ...rest,
-      }))
-
-      const modifiedData = [...modifiedTradingPages, ...modifiedHomePages]
+      const modifiedData = getModifiedPages(_pages)
 
       return { data: modifiedData, meta }
     },

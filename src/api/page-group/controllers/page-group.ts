@@ -8,8 +8,10 @@ import {
   PageGroup_int,
   PageTemplate_enum,
   TradingPage_int,
+  HomePage_int,
 } from '../../../../types'
 import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
+import { getModifiedPages } from '../../../utils/general'
 
 export default factories.createCoreController(
   'api::page-group.page-group',
@@ -19,17 +21,13 @@ export default factories.createCoreController(
 
       const modifiedData = (data as PageGroup_int[]).map(
         ({ pages, href, ...rest }) => {
-          const tradingPages = (
-            mappedPageGroup(pages.trading) as TradingPage_int[]
-          ).map(({ partners, ...rest }) => ({
-            partners: partners.map(({ partner }) => partner),
-            template: PageTemplate_enum.trading,
-            ...rest,
-          }))
+          const { id, ..._pages } = pages
+
+          const modifiedPages = getModifiedPages(_pages)
 
           return {
             href: checkIfHrefHasSlash(href),
-            pages: [...tradingPages],
+            pages: modifiedPages,
             ...rest,
           }
         }
