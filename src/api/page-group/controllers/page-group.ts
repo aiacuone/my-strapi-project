@@ -8,17 +8,8 @@ import {
   PageGroup_int,
   PageTemplate_enum,
   TradingPage_int,
-} from '../../../../types/general'
-
-const checkIfHrefHasSlash = (href: string) =>
-  href.startsWith('/') ? href : `/${href}`
-
-const mappedPageGroup = (pageGroup: Page_int[] | TradingPage_int[]) =>
-  pageGroup.map(({ href, paragraphs, ...rest }) => ({
-    href: checkIfHrefHasSlash(href),
-    paragraphs: paragraphs.map(({ paragraph }) => paragraph),
-    ...rest,
-  }))
+} from '../../../../types'
+import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
 
 export default factories.createCoreController(
   'api::page-group.page-group',

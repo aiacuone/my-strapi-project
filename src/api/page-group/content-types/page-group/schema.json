@@ -13,16 +13,19 @@
   "pluginOptions": {},
   "attributes": {
     "label": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "href": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "pages": {
       "displayName": "Pages",
       "type": "component",
       "repeatable": false,
-      "component": "shared.pages"
+      "component": "shared.pages",
+      "required": true
     }
   }
 }

@@ -1,10 +1,26 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedHomePage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_pages';
+  info: {
+    description: '';
+    displayName: 'Page: Home';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    imageUrl: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+    paragraphs: Schema.Attribute.Component<'shared.paragraph', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_links';
   info: {
     description: '';
-    displayName: 'Trading Page';
+    displayName: 'Page: Trading';
     icon: 'link';
   };
   attributes: {
@@ -18,10 +34,22 @@ export interface SharedLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLinkButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_link_buttons';
+  info: {
+    displayName: 'Link Button';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedPageTemplate extends Struct.ComponentSchema {
   collectionName: 'components_shared_page_templates';
   info: {
-    displayName: 'Page Template';
+    description: '';
+    displayName: 'Page Templates Dropdown';
   };
   attributes: {
     Template: Schema.Attribute.Enumeration<['trading']> &
@@ -37,6 +65,7 @@ export interface SharedPages extends Struct.ComponentSchema {
     displayName: 'Pages';
   };
   attributes: {
+    home: Schema.Attribute.Component<'shared.home-page', true>;
     trading: Schema.Attribute.Component<'shared.link', true>;
   };
 }
@@ -45,7 +74,7 @@ export interface SharedParagraph extends Struct.ComponentSchema {
   collectionName: 'components_shared_paragraphs';
   info: {
     description: '';
-    displayName: 'paragraph';
+    displayName: 'paragraphs';
     icon: 'bulletList';
   };
   attributes: {
@@ -57,7 +86,7 @@ export interface SharedTradePartner extends Struct.ComponentSchema {
   collectionName: 'components_shared_trade_partners';
   info: {
     description: '';
-    displayName: 'Trade Partner';
+    displayName: 'Trade Partners Dropdown';
   };
   attributes: {
     partner: Schema.Attribute.Enumeration<
@@ -85,7 +114,9 @@ export interface SharedTradePartner extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.home-page': SharedHomePage;
       'shared.link': SharedLink;
+      'shared.link-button': SharedLinkButton;
       'shared.page-template': SharedPageTemplate;
       'shared.pages': SharedPages;
       'shared.paragraph': SharedParagraph;

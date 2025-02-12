@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "single_pages",
+  "info": {
+    "singularName": "single-page",
+    "pluralName": "single-pages",
+    "displayName": "Single Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.pages"
+    }
+  }
+}

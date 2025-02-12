@@ -384,15 +384,16 @@ export interface ApiPageGroupPageGroup extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    href: Schema.Attribute.String;
-    label: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::page-group.page-group'
     > &
       Schema.Attribute.Private;
-    pages: Schema.Attribute.Component<'shared.pages', false>;
+    pages: Schema.Attribute.Component<'shared.pages', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -400,13 +401,12 @@ export interface ApiPageGroupPageGroup extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiTradingPageTradingPage extends Struct.CollectionTypeSchema {
-  collectionName: 'trading_pages';
+export interface ApiSinglePageSinglePage extends Struct.SingleTypeSchema {
+  collectionName: 'single_pages';
   info: {
-    description: '';
-    displayName: 'Trading Page';
-    pluralName: 'trading-pages';
-    singularName: 'trading-page';
+    displayName: 'Single Page';
+    pluralName: 'single-pages';
+    singularName: 'single-page';
   };
   options: {
     draftAndPublish: true;
@@ -415,15 +415,13 @@ export interface ApiTradingPageTradingPage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    href: Schema.Attribute.String;
-    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::trading-page.trading-page'
+      'api::single-page.single-page'
     > &
       Schema.Attribute.Private;
-    pages: Schema.Attribute.Component<'shared.link', true>;
+    pages: Schema.Attribute.Component<'shared.pages', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1049,7 +1047,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::page-group.page-group': ApiPageGroupPageGroup;
-      'api::trading-page.trading-page': ApiTradingPageTradingPage;
+      'api::single-page.single-page': ApiSinglePageSinglePage;
       'plugin::comments.comment': PluginCommentsComment;
       'plugin::comments.comment-report': PluginCommentsCommentReport;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_page_templates",
   "info": {
-    "displayName": "Page Template"
+    "displayName": "Page Templates Dropdown",
+    "description": ""
   },
   "options": {},
   "attributes": {

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_link_buttons",
+  "info": {
+    "displayName": "Link Button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}
