@@ -25,11 +25,33 @@ export interface ElementsAlternatingTiles extends Struct.ComponentSchema {
   };
 }
 
-export interface PagesAbout extends Struct.ComponentSchema {
-  collectionName: 'components_pages_abouts';
+export interface ElementsImages extends Struct.ComponentSchema {
+  collectionName: 'components_elements_images';
+  info: {
+    displayName: 'Images';
+  };
+  attributes: {
+    imageUrl: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsParagraphsWithTitles extends Struct.ComponentSchema {
+  collectionName: 'components_elements_paragraphs_with_titles';
   info: {
     description: '';
-    displayName: 'About';
+    displayName: 'Paragraphs with Titles';
+  };
+  attributes: {
+    paragraph: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface PagesEssentials extends Struct.ComponentSchema {
+  collectionName: 'components_pages_essentials';
+  info: {
+    description: '';
+    displayName: 'Essentials';
   };
   attributes: {
     accordions: Schema.Attribute.Component<'elements.accordions', true>;
@@ -42,8 +64,47 @@ export interface PagesAbout extends Struct.ComponentSchema {
     contactTitle: Schema.Attribute.String;
     href: Schema.Attribute.String;
     label: Schema.Attribute.String;
+    partners: Schema.Attribute.Component<'shared.trade-partner', true>;
     partnerTitle: Schema.Attribute.String;
-    tradePartners: Schema.Attribute.Component<'shared.trade-partner', true>;
+  };
+}
+
+export interface PagesOverview extends Struct.ComponentSchema {
+  collectionName: 'components_pages_overviews';
+  info: {
+    displayName: 'Overview';
+  };
+  attributes: {
+    bannerUrl: Schema.Attribute.String;
+    href: Schema.Attribute.String;
+    imageUrl: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    paragraphs: Schema.Attribute.Component<'shared.paragraph', true>;
+    partners: Schema.Attribute.Component<'shared.trade-partner', true>;
+  };
+}
+
+export interface PagesProject extends Struct.ComponentSchema {
+  collectionName: 'components_pages_projects';
+  info: {
+    description: '';
+    displayName: 'project';
+  };
+  attributes: {
+    accordions: Schema.Attribute.Component<'elements.accordions', true>;
+    accordionTitle: Schema.Attribute.String;
+    href: Schema.Attribute.String;
+    images: Schema.Attribute.Component<'elements.images', true>;
+    label: Schema.Attribute.String;
+    linkButtons: Schema.Attribute.Component<'shared.link-button', true>;
+    linkTitle: Schema.Attribute.String;
+    paragraphsAndTitles: Schema.Attribute.Component<
+      'elements.paragraphs-with-titles',
+      true
+    >;
+    partners: Schema.Attribute.Component<'shared.trade-partner', true>;
+    partnerTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -60,24 +121,6 @@ export interface SharedHomePage extends Struct.ComponentSchema {
     linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     paragraphs: Schema.Attribute.Component<'shared.paragraph', true>;
     title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedLink extends Struct.ComponentSchema {
-  collectionName: 'components_shared_links';
-  info: {
-    description: '';
-    displayName: 'Page: Trading';
-    icon: 'link';
-  };
-  attributes: {
-    bannerUrl: Schema.Attribute.String & Schema.Attribute.Required;
-    href: Schema.Attribute.String & Schema.Attribute.Required;
-    imageUrl: Schema.Attribute.String & Schema.Attribute.Required;
-    label: Schema.Attribute.String & Schema.Attribute.Required;
-    paragraphs: Schema.Attribute.Component<'shared.paragraph', true> &
-      Schema.Attribute.Required;
-    partners: Schema.Attribute.Component<'shared.trade-partner', true>;
   };
 }
 
@@ -112,9 +155,10 @@ export interface SharedPages extends Struct.ComponentSchema {
     displayName: 'Pages';
   };
   attributes: {
-    about: Schema.Attribute.Component<'pages.about', true>;
+    essentials: Schema.Attribute.Component<'pages.essentials', true>;
     home: Schema.Attribute.Component<'shared.home-page', true>;
-    trading: Schema.Attribute.Component<'shared.link', true>;
+    overview: Schema.Attribute.Component<'pages.overview', true>;
+    project: Schema.Attribute.Component<'pages.project', true>;
   };
 }
 
@@ -164,9 +208,12 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'elements.accordions': ElementsAccordions;
       'elements.alternating-tiles': ElementsAlternatingTiles;
-      'pages.about': PagesAbout;
+      'elements.images': ElementsImages;
+      'elements.paragraphs-with-titles': ElementsParagraphsWithTitles;
+      'pages.essentials': PagesEssentials;
+      'pages.overview': PagesOverview;
+      'pages.project': PagesProject;
       'shared.home-page': SharedHomePage;
-      'shared.link': SharedLink;
       'shared.link-button': SharedLinkButton;
       'shared.page-template': SharedPageTemplate;
       'shared.pages': SharedPages;

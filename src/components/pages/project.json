@@ -1,0 +1,53 @@
+{
+  "collectionName": "components_pages_projects",
+  "info": {
+    "displayName": "project",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.images"
+    },
+    "paragraphsAndTitles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.paragraphs-with-titles"
+    },
+    "linkTitle": {
+      "type": "string"
+    },
+    "linkButtons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link-button"
+    },
+    "partnerTitle": {
+      "type": "string"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.trade-partner"
+    },
+    "accordionTitle": {
+      "type": "string"
+    },
+    "accordions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.accordions"
+    }
+  }
+}

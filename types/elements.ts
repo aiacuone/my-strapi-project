@@ -12,7 +12,12 @@ export interface AlternatingTiles_int {
   linkButton: LinkButton_int
 }
 
-export interface Accordions_int {
+export interface Accordion_int {
+  title: string
+  paragraph: string
+}
+
+export interface ParagraphsAndTitles_int {
   title: string
   paragraph: string
 }

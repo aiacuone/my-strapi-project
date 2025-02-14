@@ -1,16 +1,22 @@
 import {
   Page_int,
-  TradingPage_int,
-  PageTemplate_enum,
   HomePage_int,
-  AboutPage_int,
+  OverviewPage_int,
+  EssentialsPage_int,
+  ProjectPage_int,
+  PageTemplate_enum,
 } from '../../types'
 
 export const checkIfHrefHasSlash = (href: string) =>
   href.startsWith('/') ? href : `/${href}`
 
 export const mappedPageGroup = (
-  pageGroup: (TradingPage_int | HomePage_int | AboutPage_int)[],
+  pageGroup: (
+    | HomePage_int
+    | OverviewPage_int
+    | EssentialsPage_int
+    | ProjectPage_int
+  )[],
   template: PageTemplate_enum
 ) =>
   pageGroup.map(({ href, ...rest }) => {
@@ -32,7 +38,7 @@ export const mappedPageGroup = (
 export const getModifiedPages = (
   pages: Record<
     PageTemplate_enum,
-    TradingPage_int[] | HomePage_int[] | AboutPage_int[]
+    (HomePage_int | OverviewPage_int | EssentialsPage_int | ProjectPage_int)[]
   >
 ) =>
   Object.entries(pages).reduce(

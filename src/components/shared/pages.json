@@ -6,20 +6,25 @@
   },
   "options": {},
   "attributes": {
-    "trading": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.link"
-    },
     "home": {
       "type": "component",
       "repeatable": true,
       "component": "shared.home-page"
     },
-    "about": {
+    "overview": {
       "type": "component",
       "repeatable": true,
-      "component": "pages.about"
+      "component": "pages.overview"
+    },
+    "essentials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pages.essentials"
+    },
+    "project": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pages.project"
     }
   }
 }

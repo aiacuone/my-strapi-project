@@ -7,11 +7,12 @@ import {
   Page_int,
   PageGroup_int,
   PageTemplate_enum,
-  TradingPage_int,
+  OverviewPage_int,
   HomePage_int,
 } from '../../../../types'
 import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
 import { getModifiedPages } from '../../../utils/general'
+import { EssentialsPage_int, ProjectPage_int } from '../../../../types/pages'
 
 export default factories.createCoreController(
   'api::page-group.page-group',
@@ -26,7 +27,12 @@ export default factories.createCoreController(
           const modifiedPages = getModifiedPages(
             _pages as Record<
               PageTemplate_enum,
-              TradingPage_int[] | HomePage_int[]
+              (
+                | HomePage_int
+                | OverviewPage_int
+                | EssentialsPage_int
+                | ProjectPage_int
+              )[]
             >
           )
 

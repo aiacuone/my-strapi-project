@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_pages_overviews",
+  "info": {
+    "displayName": "Overview"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "bannerUrl": {
+      "type": "string"
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.paragraph"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.trade-partner"
+    }
+  }
+}

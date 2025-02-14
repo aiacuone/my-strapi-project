@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_paragraphs_with_titles",
+  "info": {
+    "displayName": "Paragraphs with Titles",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    }
+  }
+}

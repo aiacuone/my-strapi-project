@@ -5,7 +5,6 @@
 import { factories } from '@strapi/strapi'
 import {
   PageGroup_int,
-  TradingPage_int,
   PageTemplate_enum,
   Page_int,
   HomePage_int,
