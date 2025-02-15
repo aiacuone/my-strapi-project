@@ -4,15 +4,15 @@
 
 import { factories } from '@strapi/strapi'
 import {
-  Page_int,
   PageGroup_int,
   PageTemplate_enum,
   OverviewPage_int,
   LandingPage_int,
+  EssentialsPage_int,
+  ProjectPage_int,
 } from '../../../../types'
 import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
 import { getModifiedPages } from '../../../utils/general'
-import { EssentialsPage_int, ProjectPage_int } from '../../../../types/pages'
 
 export default factories.createCoreController(
   'api::page-group.page-group',

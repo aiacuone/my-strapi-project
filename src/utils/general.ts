@@ -5,7 +5,10 @@ import {
   EssentialsPage_int,
   ProjectPage_int,
   PageTemplate_enum,
+  Partner_enum,
+  Partner_int,
 } from '../../types'
+import { partners as allPartners } from './partners'
 
 export const checkIfHrefHasSlash = (href: string) =>
   href.startsWith('/') ? href : `/${href}`
@@ -27,10 +30,15 @@ export const mappedPageGroup = (
     }
 
     if ('partners' in rest)
-      result['partners'] = rest.partners.map(({ partner }) => partner)
+      result['partners'] = rest.partners.map(({ partner: partnerEnum }) =>
+        getPartnerFromEnum(partnerEnum)
+      )
 
     if ('paragraphs' in rest)
       result['paragraphs'] = rest.paragraphs.map(({ paragraph }) => paragraph)
+
+    if ('images' in rest)
+      result['images'] = rest.images.map(({ imageUrl }) => imageUrl)
 
     return result
   })
@@ -56,3 +64,6 @@ export const getModifiedPages = (
     ],
     []
   )
+
+export const getPartnerFromEnum = (partnerEnum: Partner_enum): Partner_int =>
+  allPartners.find(({ key: _partnerEnum }) => _partnerEnum === partnerEnum)

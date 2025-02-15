@@ -1,5 +1,3 @@
-import { Partner_enum } from './general'
-
 export interface LinkButton_int {
   label: string
   href: string
