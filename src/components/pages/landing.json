@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_shared_home_pages",
+  "collectionName": "components_pages_landings",
   "info": {
-    "displayName": "Page: Home",
-    "description": ""
+    "displayName": "Landing"
   },
   "options": {},
   "attributes": {
@@ -23,9 +22,9 @@
       "repeatable": true,
       "component": "shared.paragraph"
     },
-    "linkButton": {
+    "linkButtons": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "shared.link-button"
     }
   }

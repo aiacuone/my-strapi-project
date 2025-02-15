@@ -8,7 +8,7 @@ import {
   PageGroup_int,
   PageTemplate_enum,
   OverviewPage_int,
-  HomePage_int,
+  LandingPage_int,
 } from '../../../../types'
 import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
 import { getModifiedPages } from '../../../utils/general'
@@ -28,7 +28,7 @@ export default factories.createCoreController(
             _pages as Record<
               PageTemplate_enum,
               (
-                | HomePage_int
+                | LandingPage_int
                 | OverviewPage_int
                 | EssentialsPage_int
                 | ProjectPage_int

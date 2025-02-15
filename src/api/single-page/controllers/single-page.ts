@@ -3,12 +3,6 @@
  */
 
 import { factories } from '@strapi/strapi'
-import {
-  PageGroup_int,
-  PageTemplate_enum,
-  Page_int,
-  HomePage_int,
-} from '../../../../types'
 import { checkIfHrefHasSlash, mappedPageGroup } from '../../../utils'
 import { getModifiedPages } from '../../../utils/general'
 

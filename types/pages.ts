@@ -6,7 +6,7 @@ import {
 } from './elements'
 
 export enum PageTemplate_enum {
-  home = 'home',
+  landing = 'landing',
   overview = 'overview',
   essentials = 'essentials',
   project = 'project',
@@ -23,7 +23,7 @@ export interface OverviewPage_int extends Page_int {
   partners?: { partner: Partner_enum }[]
 }
 
-export interface HomePage_int extends Page_int {
+export interface LandingPage_int extends Page_int {
   title: string
   linkButton: LinkButton_int
   paragraphs?: { paragraph: string }[]
@@ -56,7 +56,7 @@ export interface PageGroup_int {
   label: string
   pages: {
     id: string
-    [PageTemplate_enum.home]: HomePage_int[]
+    [PageTemplate_enum.landing]: LandingPage_int[]
     [PageTemplate_enum.overview]: OverviewPage_int[]
     [PageTemplate_enum.essentials]: EssentialsPage_int[]
     [PageTemplate_enum.project]: ProjectPage_int[]

@@ -69,6 +69,21 @@ export interface PagesEssentials extends Struct.ComponentSchema {
   };
 }
 
+export interface PagesLanding extends Struct.ComponentSchema {
+  collectionName: 'components_pages_landings';
+  info: {
+    displayName: 'Landing';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    imageUrl: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    linkButtons: Schema.Attribute.Component<'shared.link-button', true>;
+    paragraphs: Schema.Attribute.Component<'shared.paragraph', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PagesOverview extends Struct.ComponentSchema {
   collectionName: 'components_pages_overviews';
   info: {
@@ -108,22 +123,6 @@ export interface PagesProject extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedHomePage extends Struct.ComponentSchema {
-  collectionName: 'components_shared_home_pages';
-  info: {
-    description: '';
-    displayName: 'Page: Home';
-  };
-  attributes: {
-    href: Schema.Attribute.String;
-    imageUrl: Schema.Attribute.String;
-    label: Schema.Attribute.String;
-    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
-    paragraphs: Schema.Attribute.Component<'shared.paragraph', true>;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SharedLinkButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_link_buttons';
   info: {
@@ -156,7 +155,7 @@ export interface SharedPages extends Struct.ComponentSchema {
   };
   attributes: {
     essentials: Schema.Attribute.Component<'pages.essentials', true>;
-    home: Schema.Attribute.Component<'shared.home-page', true>;
+    landing: Schema.Attribute.Component<'pages.landing', true>;
     overview: Schema.Attribute.Component<'pages.overview', true>;
     project: Schema.Attribute.Component<'pages.project', true>;
   };
@@ -211,9 +210,9 @@ declare module '@strapi/strapi' {
       'elements.images': ElementsImages;
       'elements.paragraphs-with-titles': ElementsParagraphsWithTitles;
       'pages.essentials': PagesEssentials;
+      'pages.landing': PagesLanding;
       'pages.overview': PagesOverview;
       'pages.project': PagesProject;
-      'shared.home-page': SharedHomePage;
       'shared.link-button': SharedLinkButton;
       'shared.page-template': SharedPageTemplate;
       'shared.pages': SharedPages;

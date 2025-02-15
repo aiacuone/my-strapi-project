@@ -1,6 +1,6 @@
 import {
   Page_int,
-  HomePage_int,
+  LandingPage_int,
   OverviewPage_int,
   EssentialsPage_int,
   ProjectPage_int,
@@ -12,7 +12,7 @@ export const checkIfHrefHasSlash = (href: string) =>
 
 export const mappedPageGroup = (
   pageGroup: (
-    | HomePage_int
+    | LandingPage_int
     | OverviewPage_int
     | EssentialsPage_int
     | ProjectPage_int
@@ -38,7 +38,12 @@ export const mappedPageGroup = (
 export const getModifiedPages = (
   pages: Record<
     PageTemplate_enum,
-    (HomePage_int | OverviewPage_int | EssentialsPage_int | ProjectPage_int)[]
+    (
+      | LandingPage_int
+      | OverviewPage_int
+      | EssentialsPage_int
+      | ProjectPage_int
+    )[]
   >
 ) =>
   Object.entries(pages).reduce(
