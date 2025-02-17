@@ -22,6 +22,7 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "strapi-plugin-comments": "^3.0.6",
+    "strapi-v5-plugin-populate-deep": "^4.0.4",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
