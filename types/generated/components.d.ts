@@ -119,6 +119,7 @@ export interface PagesProject extends Struct.ComponentSchema {
     >;
     partners: Schema.Attribute.Component<'shared.trade-partner', true>;
     partnerTitle: Schema.Attribute.String;
+    subTitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }

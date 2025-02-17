@@ -41,6 +41,7 @@ export interface EssentialsPage_int extends Page_int {
 
 export interface ProjectPage_int extends Page_int {
   title: string
+  subTitle: string
   images: { id: string; imageUrl: string }[]
   paragraphsAndTitles: ParagraphsAndTitles_int
   linkTitle: string
