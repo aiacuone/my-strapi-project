@@ -19,7 +19,7 @@ export interface ElementsAlternatingTiles extends Struct.ComponentSchema {
   };
   attributes: {
     imageUrl: Schema.Attribute.String;
-    linkButton: Schema.Attribute.Component<'shared.link-button', true>;
+    linkButtons: Schema.Attribute.Component<'shared.link-button', true>;
     paragraphs: Schema.Attribute.Component<'shared.paragraph', true>;
     title: Schema.Attribute.String;
   };

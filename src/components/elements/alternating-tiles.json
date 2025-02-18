@@ -12,7 +12,7 @@
     "imageUrl": {
       "type": "string"
     },
-    "linkButton": {
+    "linkButtons": {
       "type": "component",
       "repeatable": true,
       "component": "shared.link-button"
