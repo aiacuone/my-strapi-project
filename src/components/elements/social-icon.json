@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_elements_social_icons",
+  "info": {
+    "displayName": "Socials",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "twitter",
+        "instagram",
+        "linkedin",
+        "youtube"
+      ]
+    },
+    "href": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_contacts",
+  "info": {
+    "displayName": "Contact",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "key": {
+      "type": "enumeration",
+      "enum": [
+        "phone",
+        "email",
+        "location"
+      ]
+    },
+    "href": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

@@ -47,6 +47,20 @@ export interface ElementsParagraphsWithTitles extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsSocialIcon extends Struct.ComponentSchema {
+  collectionName: 'components_elements_social_icons';
+  info: {
+    description: '';
+    displayName: 'Socials';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    key: Schema.Attribute.Enumeration<
+      ['facebook', 'twitter', 'instagram', 'linkedin', 'youtube']
+    >;
+  };
+}
+
 export interface PagesEssentials extends Struct.ComponentSchema {
   collectionName: 'components_pages_essentials';
   info: {
@@ -124,6 +138,19 @@ export interface PagesProject extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contacts';
+  info: {
+    description: '';
+    displayName: 'Contact';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    key: Schema.Attribute.Enumeration<['phone', 'email', 'location']>;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface SharedLinkButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_link_buttons';
   info: {
@@ -174,6 +201,19 @@ export interface SharedParagraph extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_socials';
+  info: {
+    displayName: 'Social';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    social: Schema.Attribute.Enumeration<
+      ['Facebook', 'Twitter', 'Instagram', 'Linkedin', 'Youtube']
+    >;
+  };
+}
+
 export interface SharedTradePartner extends Struct.ComponentSchema {
   collectionName: 'components_shared_trade_partners';
   info: {
@@ -210,14 +250,17 @@ declare module '@strapi/strapi' {
       'elements.alternating-tiles': ElementsAlternatingTiles;
       'elements.images': ElementsImages;
       'elements.paragraphs-with-titles': ElementsParagraphsWithTitles;
+      'elements.social-icon': ElementsSocialIcon;
       'pages.essentials': PagesEssentials;
       'pages.landing': PagesLanding;
       'pages.overview': PagesOverview;
       'pages.project': PagesProject;
+      'shared.contact': SharedContact;
       'shared.link-button': SharedLinkButton;
       'shared.page-template': SharedPageTemplate;
       'shared.pages': SharedPages;
       'shared.paragraph': SharedParagraph;
+      'shared.social': SharedSocial;
       'shared.trade-partner': SharedTradePartner;
     }
   }
